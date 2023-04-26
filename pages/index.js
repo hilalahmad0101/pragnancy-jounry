@@ -29,7 +29,7 @@ export default function Home() {
             />
           </div>
           <div className="my-3">
-            <Link href={`/admin/dashboard`}><button className="w-full py-3 text-center bg-yellow-500 text-white rounded-[8px]">
+            <Link href={`/admin/dashboard`}><button className="w-full py-3 text-center bg-pink-400 text-white rounded-[8px]">
               Login
             </button></Link>
           </div>

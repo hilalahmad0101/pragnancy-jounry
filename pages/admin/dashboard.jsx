@@ -45,7 +45,7 @@ const Home = () => {
 
         <div className="mt-[100px]">
           <ul>
-            <li className="flex items-center justify-center my-2 hover:bg-yellow-400 py-2 px-2 hover:py-2 hover:px-2 cursor-pointer hover:text-white">
+            <li className="flex items-center  my-2 hover:bg-pink-400 py-2 px-2 hover:py-2 hover:px-2 cursor-pointer hover:text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -62,7 +62,7 @@ const Home = () => {
               </svg>
               <h1 className="ml-3 text-[18px] font-normal">Dashboard</h1>
             </li>
-            <li className="flex items-center justify-center my-2 hover:bg-yellow-400 py-2 px-2 hover:py-2 hover:px-2 cursor-pointer hover:text-white">
+            <li className="flex items-center my-2 hover:bg-pink-400 py-2 px-2 hover:py-2 hover:px-2 cursor-pointer hover:text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -77,7 +77,109 @@ const Home = () => {
                   d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
                 />
               </svg>
-              <h1 className="ml-3 text-[18px] font-normal">Dashboard</h1>
+              <h1 className="ml-3 text-[18px] font-normal">Category</h1>
+            </li>
+            <li className="flex items-center my-2 hover:bg-pink-400 py-2 px-2 hover:py-2 hover:px-2 cursor-pointer hover:text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                />
+              </svg>
+              <h1 className="ml-3 text-[18px] font-normal">Users</h1>
+            </li>
+            <li className="flex items-center my-2 hover:bg-pink-400 py-2 px-2 hover:py-2 hover:px-2 cursor-pointer hover:text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                />
+              </svg>
+              <h1 className="ml-3 text-[18px] font-normal">Diet</h1>
+            </li>
+            <li className="flex items-center my-2 hover:bg-pink-400 py-2 px-2 hover:py-2 hover:px-2 cursor-pointer hover:text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                />
+              </svg>
+              <h1 className="ml-3 text-[18px] font-normal">Exercise</h1>
+            </li>
+            <li className="flex items-center my-2 hover:bg-pink-400 py-2 px-2 hover:py-2 hover:px-2 cursor-pointer hover:text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                />
+              </svg>
+              <h1 className="ml-3 text-[18px] font-normal">Drugs</h1>
+            </li>
+            <li className="flex items-center my-2 hover:bg-pink-400 py-2 px-2 hover:py-2 hover:px-2 cursor-pointer hover:text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                />
+              </svg>
+              <h1 className="ml-3 text-[18px] font-normal">A-Z Pregnancy</h1>
+            </li>
+            <li className="flex items-center my-2 hover:bg-pink-400 py-2 px-2 hover:py-2 hover:px-2 cursor-pointer hover:text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                />
+              </svg>
+              <h1 className="ml-3 text-[18px] font-normal">Blogs</h1>
             </li>
           </ul>
         </div>
@@ -130,7 +232,7 @@ const Home = () => {
                 }`}
               >
                 <ul className="py-2 px-4">
-                  <li className="flex items-center my-2 hover:bg-yellow-400 py-1 px-1 hover:py-1 hover:px-1 rounded-md cursor-pointer hover:text-white">
+                  <li className="flex items-center my-2 hover:bg-pink-400 py-1 px-1 hover:py-1 hover:px-1 rounded-md cursor-pointer hover:text-white">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -147,7 +249,7 @@ const Home = () => {
                     </svg>
                     <h2 className="ml-2">Update Profile</h2>
                   </li>
-                  <li className="flex items-center my-2 hover:bg-yellow-400 py-1 px-1 hover:py-1 hover:px-1 rounded-md cursor-pointer hover:text-white">
+                  <li className="flex items-center my-2 hover:bg-pink-400 py-1 px-1 hover:py-1 hover:px-1 rounded-md cursor-pointer hover:text-white">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -164,7 +266,7 @@ const Home = () => {
                     </svg>
                     <h2 className="ml-2">Password</h2>
                   </li>
-                  <li className="flex items-center my-2 hover:bg-yellow-400 py-1 px-1 hover:py-1 hover:px-1 rounded-md cursor-pointer hover:text-white">
+                  <li className="flex items-center my-2 hover:bg-pink-400 py-1 px-1 hover:py-1 hover:px-1 rounded-md cursor-pointer hover:text-white">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -191,7 +293,7 @@ const Home = () => {
           <h1 className="text-[24px] font-medium">Dashboard</h1>
           <div className="my-1">
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-3">
-              <div className="bg-yellow-400 flex justify-center flex-col items-center py-10 rounded-md">
+              <div className="bg-pink-400 flex justify-center flex-col items-center py-10 rounded-md">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="white"
@@ -215,7 +317,7 @@ const Home = () => {
                   Category
                 </h1>
               </div>
-              <div className="bg-yellow-400 flex justify-center flex-col items-center py-10 rounded-md">
+              <div className="bg-pink-400 flex justify-center flex-col items-center py-10 rounded-md">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="white"
@@ -239,7 +341,7 @@ const Home = () => {
                   Category
                 </h1>
               </div>
-              <div className="bg-yellow-400 flex justify-center flex-col items-center py-10 rounded-md">
+              <div className="bg-pink-400 flex justify-center flex-col items-center py-10 rounded-md">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="white"
@@ -263,7 +365,7 @@ const Home = () => {
                   Category
                 </h1>
               </div>
-              <div className="bg-yellow-400 flex justify-center flex-col items-center py-10 rounded-md">
+              <div className="bg-pink-400 flex justify-center flex-col items-center py-10 rounded-md">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="white"
@@ -287,7 +389,7 @@ const Home = () => {
                   Category
                 </h1>
               </div>
-              <div className="bg-yellow-400 flex justify-center flex-col items-center py-10 rounded-md">
+              <div className="bg-pink-400 flex justify-center flex-col items-center py-10 rounded-md">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="white"
