@@ -1,46 +1,42 @@
-import Form from "@/components/Form";
 import { GlobalContext } from "@/context/GlobalContext";
 import { dangerAlert, successAlert } from "@/utils/alert";
-import { getCreateBlogCategoryUrl } from "@/utils/urls";
+import { getCreateBlogCategoryUrl, getCreateBlogUrl } from "@/utils/urls";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useContext, useRef, useState } from "react";
-import { toast } from "react-hot-toast";
 import JoditEditor from "jodit-react";
 
-const CreateCategory = () => {
+const CreateBlog = () => {
   const editor = useRef(null);
 
   const [content, setContent] = useState("");
 
-  const { getAllCategory } = useContext(GlobalContext);
+  const { getAllBlog } = useContext(GlobalContext);
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
-  const [category, setCategory] = useState({
-    name: "",
-    description: "",
+  const [blog, setBlog] = useState({
+    title: "",
+    html_description: "",
+    user_id:localStorage.getItem('token')
   });
 
-  console.log(category);
   const onChangeHandle = (e) => {
     const name = e.target.name;
-    const value = e.target.value;
-
-    setCategory({ ...category, [name]: value });
+    const value = e.target.value; 
+    setBlog({ ...blog, [name]: value });
   };
 
   const onSubmitHandle = async (e) => {
-    console.log(category)
     e.preventDefault();
     setLoading(true);
-    const { name, description } = category;
-    if (name && description) {
+    const { title, html_description } = blog;
+    if (title && html_description) {
       const res = await (
-        await fetch(getCreateBlogCategoryUrl, {
+        await fetch(getCreateBlogUrl, {
           method: "POST",
-          body: JSON.stringify(category),
+          body: JSON.stringify(blog),
           headers: {
             "Content-Type": "application/json",
             authorization: localStorage.getItem("token"),
@@ -48,12 +44,12 @@ const CreateCategory = () => {
         })
       ).json();
       if (res.error) {
-        dangerAlert("Server Problem");
+        dangerAlert(res.message);
         setLoading(false);
       } else {
         successAlert("Category Add Successfully");
-        router.push("/admin/category");
-        getAllCategory();
+        router.push("/admin/blog");
+        getAllBlog();
         setLoading(false);
       }
     } else {
@@ -67,8 +63,8 @@ const CreateCategory = () => {
         <div className="flex justify-between items-center">
           <h1 className="text-xl font-medium">
             {" "}
-            <Link href={`/admin/category`} className="underline">
-              Category
+            <Link href={`/admin/blog`} className="underline">
+              Blog
             </Link>{" "}
             / Add New
           </h1>
@@ -80,23 +76,23 @@ const CreateCategory = () => {
             onSubmit={onSubmitHandle}
             className="shadow-md bg-white rounded-md px-[49px] py-[30px]"
           >
-            <h1 className="font-semibold text-3xl text-center">Category</h1>
+            <h1 className="font-semibold text-3xl text-center">Blog</h1>
             <div className="my-4">
               <label htmlFor="" className="text-[20px] font-medium">
-                Category Name
+                Blog Title
               </label>
               <input
                 type="text"
-                name="name"
+                name="title"
                 onChange={onChangeHandle}
-                placeholder="Enter Category Name"
+                placeholder="Enter Blog Name"
                 className="w-full bg-gray-100 border border-gray-100 rounded-[7px] py-3 px-4 outline-none text-md font-normal mt-3"
               />
             </div>
 
             <div className="my-4">
               <label htmlFor="" className="text-[20px] font-medium">
-                Category Description
+                Blog Description
               </label>
               <JoditEditor
                 ref={editor}
@@ -105,7 +101,7 @@ const CreateCategory = () => {
                 tabIndex={1} // tabIndex of textarea
                 onBlur={(newContent) => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
                 onChange={(newContent) => {
-                  setCategory({ description: newContent });
+                  setBlog({ html_description: newContent });
                 }}
               />
             </div>
@@ -150,4 +146,4 @@ const CreateCategory = () => {
   );
 };
 
-export default CreateCategory;
+export default CreateBlog;

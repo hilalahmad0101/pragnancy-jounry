@@ -1,7 +1,8 @@
 import { GlobalContext } from "@/context/GlobalContext";
 import { Inter } from "next/font/google";
 import Link from 'next/link';
-import { useContext, useState } from "react";
+import { useRouter } from "next/router";
+import { useContext, useEffect, useState } from "react";
 
 export default function Home() {
 
@@ -22,6 +23,12 @@ export default function Home() {
     e.preventDefault();
     userLogin(users);
   }
+
+  const router=useRouter();
+  useEffect(() => {
+    // router.reload();
+  }, [])
+  
 
   return (
     <main className="w-full h-screen bg-gray-100 flex justify-center items-center">

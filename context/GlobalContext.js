@@ -1,4 +1,4 @@
-import { getAllBlogCategoryUrl, loginUrl } from "@/utils/urls";
+import { getAllBlogCategoryUrl, getAllBlogUrl, loginUrl } from "@/utils/urls";
 import { options } from "joi";
 import { useRouter } from "next/router";
 import { createContext, useEffect, useState } from "react";
@@ -12,6 +12,8 @@ const GlobalProvider = ({ children }) => {
     const [token, setToken] = useState(false);
     const [loading, setLoading] = useState(false);
     const [categories, setCategories] = useState([]);
+    const [blogs, setBlogs] = useState([]);
+    const [bloodPressure, setBloodPressure] = useState([]);
     const router = useRouter();
     const userLogin = async (users) => {
         const { email, password } = users;
@@ -36,7 +38,8 @@ const GlobalProvider = ({ children }) => {
                         color: 'white',
                     },
                 });
-                router.push('/admin/dashboard');
+                // router.push('/admin/dashboard');
+                window.location.href="/admin/dashboard";
                 localStorage.setItem('token', res.accessToken);
             }
             setLoading(false);
@@ -62,12 +65,49 @@ const GlobalProvider = ({ children }) => {
         })).json();
         setCategories(res)
     }
+
+    const getAllBlog = async () => {
+        const res = await (await fetch(getAllBlogUrl, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': localStorage.getItem('token')
+            },
+        })).json();
+        setBlogs(res)
+    }
+
+    const getAllBloodPressure = async () => {
+        const res = await (await fetch(getAllBloodPressure, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': localStorage.getItem('token')
+            },
+        })).json();
+        console.log(res);
+        setBloodPressure(res)
+    }
+
+    const logoutUser=()=>{
+        localStorage.removeItem('token');
+        window.location.href="/";
+
+    }
     useEffect(() => {
         getAllCategory();
+        getAllBlog();
+        getAllBloodPressure();
     }, [])
 
     return (
-        <GlobalContext.Provider value={{ token, userLogin, loading ,categories,getAllCategory}}>
+        <GlobalContext.Provider value={{
+            token,
+            userLogin, loading,
+            categories, getAllCategory,
+            blogs, getAllBlog,
+            bloodPressure, getAllBloodPressure,logoutUser
+        }}>
             {children}
         </GlobalContext.Provider>
     )
